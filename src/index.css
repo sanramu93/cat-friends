@@ -1,0 +1,83 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+input {
+  text-indent: 0.5em;
+}
+
+.header {
+  text-align: center;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-bar {
+  height: 2rem;
+  width: 50rem;
+  margin: 0 auto;
+}
+
+.add-contact {
+  width: 50rem;
+  margin: 1em auto;
+}
+
+.add-contact__name,
+.add-contact__email {
+  margin-right: 1em;
+}
+
+.add-contact__submit {
+  text-indent: 0;
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90vw;
+  max-width: 92rem;
+  margin: 0 auto;
+  gap: 0.5em;
+  padding: 1em;
+  border: solid 1px lime;
+}
+
+.card {
+  display: flex;
+  width: 20rem;
+  height: 7rem;
+  border: solid 1px red;
+  padding: 0.5em;
+}
+
+.card__img {
+  border: solid 1px purple;
+  padding: 0.2em;
+  border-radius: 50%;
+  background-color: lightblue;
+  margin-right: 0.5em;
+}
+
+.card__email {
+  font-size: 1rem;
+}
