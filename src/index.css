@@ -72,6 +72,8 @@ input {
 
 .card__img {
   border: solid 1px purple;
+  width: 5rem;
+  height: 5rem;
   padding: 0.2em;
   border-radius: 50%;
   background-color: lightblue;

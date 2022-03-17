@@ -1,11 +1,26 @@
-export default function AddContact({ addContact }) {
+export default function AddContact({
+  addContact,
+  onNameChange,
+  onEmailChange,
+}) {
   return (
-    <div className="add-contact">
-      <input className="add-contact__name" type="text" placeholder="Name" />
-      <input className="add-contact__email" type="text" placeholder="Email" />
-      <button type="submit" onClick={addContact}>
-        +
-      </button>
-    </div>
+    <form className="add-contact" onSubmit={addContact}>
+      <input
+        className="add-contact__name"
+        type="text"
+        placeholder="Name"
+        required
+        onChange={onNameChange}
+      />
+      <input
+        className="add-contact__email"
+        type="email"
+        required
+        placeholder="Email"
+        onChange={onEmailChange}
+      />
+
+      <input type="submit" value="+" />
+    </form>
   );
 }
