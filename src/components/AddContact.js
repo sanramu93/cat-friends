@@ -5,6 +5,7 @@ export default function AddContact({
 }) {
   return (
     <form className="add-contact" onSubmit={addContact}>
+      <h2 className="add-contact__title">Add new contact</h2>
       <input
         className="add-contact__name"
         type="text"
@@ -20,7 +21,7 @@ export default function AddContact({
         onChange={onEmailChange}
       />
 
-      <input type="submit" value="+" />
+      <input type="submit" value="+" className="add-contact__submit" />
     </form>
   );
 }

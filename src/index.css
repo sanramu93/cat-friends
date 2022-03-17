@@ -21,7 +21,12 @@ body {
 
 input {
   text-indent: 0.5em;
+  width: 20rem;
+  height: 3rem;
+  font-size: 1.6rem;
 }
+
+/* HEADER */
 
 .header {
   text-align: center;
@@ -30,32 +35,37 @@ input {
   flex-direction: column;
 }
 
-.search-bar {
-  height: 2rem;
-  width: 50rem;
-  margin: 0 auto;
+.header__title {
+  margin-bottom: 0.5em;
 }
 
-.add-contact {
-  width: 50rem;
-  margin: 1em auto;
+.search-bar {
+  height: 3rem;
+  margin: 0 auto;
+  margin-bottom: 2em;
+}
+
+.add-contact__title {
+  margin-bottom: 0.5em;
 }
 
 .add-contact__name,
 .add-contact__email {
-  margin-right: 1em;
+  margin: 0.5em;
 }
 
 .add-contact__submit {
   text-indent: 0;
 }
 
+/* CONTACTS */
+
 .contacts {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 90vw;
-  max-width: 92rem;
+  max-width: 120rem;
   margin: 0 auto;
   gap: 0.5em;
   padding: 1em;
@@ -63,8 +73,10 @@ input {
 }
 
 .card {
+  font-size: 1.8rem;
   display: flex;
-  width: 20rem;
+  min-width: 22rem;
+  overflow-x: hidden;
   height: 7rem;
   border: solid 1px red;
   padding: 0.5em;
@@ -81,5 +93,5 @@ input {
 }
 
 .card__email {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
