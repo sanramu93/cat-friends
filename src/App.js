@@ -28,7 +28,21 @@ export default function App() {
   const addContact = (e) => {
     e.preventDefault();
     setContacts((prevState) => {
-      return [newContact, ...prevState];
+      return [{ ...newContact, id: prevState.length + 1 }, ...prevState];
+    });
+  };
+
+  const removeContact = (e) => {
+    // Converting string to number
+    const id = parseInt(e.target.id);
+
+    const index = contacts.findIndex((contact) => contact.id === id);
+
+    setContacts((prevState) => {
+      return [
+        ...prevState.slice(0, index),
+        ...prevState.slice(index + 1, prevState.length),
+      ];
     });
   };
 
@@ -37,7 +51,7 @@ export default function App() {
       contact.name.toLowerCase().includes(searchTerm)
     );
     return filteredContacts.map((contact) => (
-      <Card key={contact.id} contact={contact} />
+      <Card key={contact.id} contact={contact} removeContact={removeContact} />
     ));
   };
 

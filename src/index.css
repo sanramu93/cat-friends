@@ -75,6 +75,7 @@ input {
 .card {
   font-size: 1.8rem;
   display: flex;
+  position: relative;
   min-width: 22rem;
   overflow-x: hidden;
   height: 7rem;
@@ -94,4 +95,19 @@ input {
 
 .card__email {
   font-size: 1.2rem;
+}
+
+.card__remove-contact {
+  margin: 0.5em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: darkred;
+  color: white;
+  cursor: pointer;
+  border: none;
+  top: 0;
+  position: absolute;
+  right: 0;
 }

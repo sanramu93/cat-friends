@@ -1,7 +1,10 @@
-export default function Card({ contact }) {
-  const { name, email } = contact;
+export default function Card({ contact, removeContact }) {
+  const { name, email, id } = contact;
   return (
     <div className="card">
+      <button className="card__remove-contact" onClick={removeContact} id={id}>
+        X
+      </button>
       <img
         className="card__img"
         src={`https://robohash.org/${name}.png?set=set4`}
