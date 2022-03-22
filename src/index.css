@@ -212,15 +212,17 @@ input {
 --------------- */
 .add-contact__inputs {
   display: flex;
-  align-content: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .add-contact__name,
 .add-contact__email {
-  margin-right: 1em;
+  margin-bottom: 0.5em;
 }
 
 .add-contact__submit {
   text-indent: 0;
+  width: 20rem;
 }
