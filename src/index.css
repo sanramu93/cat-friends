@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+/* Colors: https://coolors.co/320e3b-4c2a85-6b7fd7-bcedf6-ddfbd2 */
+
+/* ------------
+// QUICK RESET
+--------------- */
 *,
 *:before,
 *:after {
@@ -10,104 +16,211 @@ img {
   display: block;
   max-width: 100%;
 }
+/* ------------
+// CUSTOM PROPS
+--------------- */
 
 :root {
   font-size: 62.5%;
+
+  /* Typography */
+  --ff-open-sans: "Open Sans", sans-serif;
+  --fw-regular: 400;
+  --fw-medium: 600;
+  --fw-bold: 700;
+
+  /* Colors */
+  --clr-primary: #320e3b;
+  --clr-secondary: #bcedf6;
+  --clr-tertiary: #6b7fd7;
+
+  --clr-gray-light: #f1f3f5;
 }
 
+/* ------------
+// GENERAL
+--------------- */
+
 body {
+  font-family: var(--ff-open-sans);
   font-size: 1.6rem;
+  background-color: var(--clr-primary);
+  color: var(--clr-gray-light);
 }
 
 input {
+  font-family: var(--ff-open-sans);
+  font-size: 1.8rem;
+  font-weight: var(--fw-medium);
+  color: var(--clr-primary);
   text-indent: 0.5em;
   width: 20rem;
   height: 3rem;
+  border-radius: 5px;
+  border: none;
   font-size: 1.6rem;
 }
 
-/* HEADER */
+/* ------------
+// TYPOGRAPHY
+--------------- */
+.add-contact__title {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 0.5em;
+  color: var(--clr-secondary);
+}
+
+.card__name {
+  font-size: 1.8rem;
+  color: var(--clr-gray-light);
+}
+.card__email {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: var(--clr-secondary);
+}
+
+/* ------------
+// LAYOUT
+--------------- */
+
+.container {
+  width: 95vw;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.contacts {
+  display: grid;
+  gap: 1em;
+  padding: 1em;
+}
+
+@media (min-width: 600px) {
+  .contacts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 800px) {
+  .contacts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .contacts {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ------------
+// HEADER
+--------------- */
 
 .header {
   text-align: center;
   padding: 1em;
-  display: flex;
-  flex-direction: column;
 }
 
-.header__title {
-  margin-bottom: 0.5em;
+.header__logo {
+  width: 14rem;
+  margin: 0 auto;
+  margin-bottom: 1em;
 }
 
 .search-bar {
-  height: 3rem;
   margin: 0 auto;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+  background-color: var(--clr-gray-light);
 }
 
-.add-contact__title {
-  margin-bottom: 0.5em;
-}
-
-.add-contact__name,
-.add-contact__email {
-  margin: 0.5em;
-}
-
+.add-contact__btn,
 .add-contact__submit {
-  text-indent: 0;
+  width: 1.5em;
+  height: 1.5em;
+  border: solid 2px var(--clr-gray-light);
+  border-radius: 5px;
+  background-color: var(--clr-primary);
+  color: var(--clr-secondary);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  font-size: 2rem;
+  transition: all 0.2s ease-out;
 }
 
-/* CONTACTS */
-
-.contacts {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 90vw;
-  max-width: 120rem;
-  margin: 0 auto;
-  gap: 0.5em;
-  padding: 1em;
-  border: solid 1px lime;
+.add-contact__btn:hover {
+  background-color: var(--clr-secondary);
+  color: var(--clr-primary);
 }
+
+/* ------------
+// CONTACTS
+--------------- */
 
 .card {
-  font-size: 1.8rem;
   display: flex;
   position: relative;
-  min-width: 22rem;
+  width: 100%;
+  border: solid 2px var(--clr-tertiary);
+  border-radius: 10px;
+  padding: 0.8em;
   overflow-x: hidden;
-  height: 7rem;
-  border: solid 1px red;
-  padding: 0.5em;
 }
 
 .card__img {
-  border: solid 1px purple;
-  width: 5rem;
-  height: 5rem;
-  padding: 0.2em;
+  border: solid 3px var(--clr-tertiary);
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
-  background-color: lightblue;
-  margin-right: 0.5em;
+  background-color: var(--clr-primary);
+  margin-right: 1em;
+  transition: all 0.2s ease-out;
 }
 
-.card__email {
-  font-size: 1.2rem;
+.card__img:hover {
+  background-color: var(--clr-secondary);
 }
 
 .card__remove-contact {
   margin: 0.5em;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
   font-weight: 700;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: darkred;
-  color: white;
+  width: 2rem;
+  height: 2rem;
+  border: solid 2px var(--clr-tertiary);
+  background-color: var(--clr-primary);
+  color: var(--clr-tertiary);
+  border-radius: 50%;
   cursor: pointer;
-  border: none;
   top: 0;
   position: absolute;
   right: 0;
+  transition: all 0.2s ease-out;
+}
+
+.card__remove-contact:hover {
+  background-color: var(--clr-secondary);
+  color: var(--clr-primary);
+}
+
+/* ------------
+// FORM
+--------------- */
+.add-contact__inputs {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.add-contact__name,
+.add-contact__email {
+  margin-right: 1em;
+}
+
+.add-contact__submit {
+  text-indent: 0;
 }

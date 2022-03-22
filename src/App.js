@@ -1,8 +1,9 @@
 import { useState } from "react";
 import data from "./data/data";
 import SearchBar from "./components/SearchBar";
-import AddContact from "./components/AddContact";
+import Form from "./components/Form";
 import Card from "./components/Card";
+import catLogo from "./images/cat-friends-logo-light.png";
 
 export default function App() {
   const [contacts, setContacts] = useState(data);
@@ -59,9 +60,15 @@ export default function App() {
     <div className="container">
       <main className="main">
         <header className="header">
-          <h1 className="header__title">CAT FRIENDS</h1>
-          <SearchBar onTermSubmit={onTermSubmit} />
-          <AddContact
+          <div className="header__search">
+            <img
+              className="header__logo"
+              src={catLogo}
+              alt="Cat Friends logo"
+            />
+            <SearchBar onTermSubmit={onTermSubmit} />
+          </div>
+          <Form
             addContact={addContact}
             onNameChange={onNameChange}
             onEmailChange={onEmailChange}
